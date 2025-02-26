@@ -21,7 +21,7 @@ function CreateArea(props) {
     });
   }
   function submitNote(event) {
-    event.preventDefault(); // Prevent default form submission
+    event.preventDefault();
     if (!note.title || !note.content) {
       alert("Note cannot be left blank");
     } else {
@@ -32,20 +32,6 @@ function CreateArea(props) {
       });
     }
   }
-
-  // function submitNote(event) {
-  //   if (!note) {
-  //     alert("cannoty be left blank");
-  //   } else {
-  //     props.onAdd(note);
-  //     setNote({
-  //       title: "",
-  //       content: "",
-  //     });
-  //   }
-
-  //   event.preventDefault();
-  // }
 
   function expanded() {
     setExp(true);
