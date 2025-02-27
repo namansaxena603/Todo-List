@@ -31,11 +31,18 @@ function App() {
     });
   }
 
+  function editNote(id, newContent) {
+    const updatedNotes = notes.map((note, index) =>
+      index === id ? { ...note, content: newContent } : note
+    );
+    setNotes(updatedNotes);
+    localStorage.setItem("notes", JSON.stringify(updatedNotes));
+  }
+
   return (
     <div>
       <Header />
       <CreateArea onAdd={addNote} />
-
       {notes && notes.length > 0 ? (
         notes.map((noteItem, index) => (
           <Note
@@ -44,6 +51,7 @@ function App() {
             title={noteItem.title}
             content={noteItem.content}
             onDelete={deleteNote}
+            onEdit={editNote}
           />
         ))
       ) : (
