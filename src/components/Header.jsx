@@ -8,7 +8,7 @@ function Header() {
         <TextSnippetIcon
           sx={{ fontSize: "2rem", position: "relative", top: "5px" }}
         />
-        Todo-List
+        Keeper
       </h1>
     </header>
   );
